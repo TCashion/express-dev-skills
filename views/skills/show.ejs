@@ -31,6 +31,9 @@
           <h5 class="card-title"><%= skill.skill%></h5>
           <h6 class="card-subtitle mb-2 text-muted">Learned at: <%= skill.learnedAt%></h6>
           <p class="card-text"><%= skill.furtherInfo%></p>
+          <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-primary">DELETE SKILL</button>
+          </form>
         </div>
     </div>
 

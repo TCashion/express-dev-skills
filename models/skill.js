@@ -12,13 +12,6 @@ const skills = [
     {id: 9, skill: "Code Review", learnedAt: "General Assembly", furtherInfo: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos amet non rerum ab sapiente vero tempora porro natus expedita corporis aspernatur tenetur, culpa quaerat quasi nihil sequi rem inventore. Autem."},
 ];
 
-// export the functions as methods of the export object
-module.exports = {
-    getAll, 
-    getOne, 
-    create
-};
-
 function getAll() {
     return skills; 
 };
@@ -32,3 +25,16 @@ function create(skill) {
     skill.id = id;
     skills.push(skill);
 }
+
+function deleteOne(id) {
+    const idx = skills.findIndex(skill => skill.id === id);
+    skills.splice(idx, 1);
+}
+
+// export the functions as methods of the export object
+module.exports = {
+    getAll, 
+    getOne, 
+    create, 
+    deleteOne
+};
