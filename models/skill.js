@@ -15,7 +15,8 @@ const skills = [
 // export the functions as methods of the export object
 module.exports = {
     getAll, 
-    getOne
+    getOne, 
+    create
 };
 
 function getAll() {
@@ -26,3 +27,8 @@ function getOne(id) {
     return skills.find((skill) => skill.id === parseInt(id));
 };
 
+function create(skill) {
+    const id = Date.now() % 1000000; 
+    skill.id = id;
+    skills.push(skill);
+}

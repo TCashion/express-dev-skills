@@ -1,16 +1,16 @@
 // require the skills database so the controller can access it
-const skillsDb = require('../models/skill');
+const Skill = require('../models/skill');
 
 // set up index and show
 function index(req, res, next) {
     res.render('skills/index', {
-        skills: skillsDb.getAll()
+        skills: Skill.getAll()
     });
 };
 
 function show(req, res, next) {
     res.render('skills/show', {
-        skill: skillsDb.getOne(req.params.id)
+        skill: Skill.getOne(req.params.id)
     });
 };
 
@@ -19,9 +19,8 @@ function newSkill (req, res) {
 };
 
 function create (req, res) {
-    // console.log("skill: ", req.params.skill);
-    // console.log("furtherInfo: ", req.params.furtherInfo);
-    console.log("body: ", req.body);
+    Skill.create(req.body);
+    res.redirect('skills');
 };
 
 // export index and show as methods on the exports object
