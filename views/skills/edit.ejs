@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Skill</title>
+    <title>Edit Skill</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
 </head>
 <body>
 
-    <form action="/skills" method="POST" autocomplete="off">
+    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="off">
         <div class="form-group">
-            <label for="newSkillFrom">New Skill:</label>
-            <input type="text" name="skill" class="form-control" id="newSkillFrom">
+            <label for="newSkillFrom">Skill:</label>
+            <input type="text" name="skill" class="form-control" id="newSkillFrom" value="<%= skill.skill %>">
         </div>
         <div class="form-group">
             <label for="learnedAtForm">Learned At:</label>
-            <input type="text" name="learnedAt" class="form-control" id="learnedAtForm" value="General Assembly">
+            <input type="text" name="learnedAt" class="form-control" id="learnedAtForm" value="<%= skill.learnedAt %>">
         </div>
         <div class="form-group">
             <label for="furtherInfoForm">Further Info:</label>
-            <input type="text" name="furtherInfo" class="form-control" id="furtherInfoForm">
+            <input type="text" name="furtherInfo" class="form-control" id="furtherInfoForm" value="<%= skill.furtherInfo %>">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

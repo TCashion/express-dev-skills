@@ -31,10 +31,18 @@ function deleteOne(id) {
     skills.splice(idx, 1);
 }
 
+function update(skill, id) {
+    const skillObj = skills.find(skill => skill.id === parseInt(id));
+    console.log(skill, "<--- updated skill");
+    console.log(skillObj, "<--- original skill");
+    Object.assign(skillObj, skill);
+}
+
 // export the functions as methods of the export object
 module.exports = {
     getAll, 
     getOne, 
     create, 
-    deleteOne
+    deleteOne,
+    update
 };

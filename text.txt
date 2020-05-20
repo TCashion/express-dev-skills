@@ -41,3 +41,24 @@ DONE
         router.delete('/:id', skillsCtrl.delete);
     4. Code and export the controller action.
     5. res.render a view in the case of a GET request, or res.redirect if data was changed. Write the view template if it does not already exist.
+
+4. On the show view, display an Edit Skill link that when clicked, displays an edit view that displays a form for editing that Dev Skill.
+
+    1. Identify the "proper" Route (Verb + Path)    
+        GET /skills/:id/edit 
+    2. Create the UI that issues a request that matches that route. (Add an <a> or a <from>)
+        edit skill button 
+    3. Define the route on the server and map it to a controller action.
+        router.get('/:id', skillsCtrl.edit);
+    4. Code and export the controller action.
+    5. res.render a view in the case of a GET request, or res.redirect if data was changed. Write the view template if it does not already exist.
+
+5. When the edit Dev Skill form is submitted, the skill should be updated in the "database" and redirect the user back to the show view.
+
+    1. Identify the "proper" Route (Verb + Path)
+        PUT /skills/:id
+    2. Create the UI that issues a request that matches that route. (Add an <a> or a <from>)
+    3. Define the route on the server and map it to a controller action.
+        router.put('/:id', skillsCtrl.update);
+    4. Code and export the controller action.
+    5. res.render a view in the case of a GET request, or res.redirect if data was changed. Write the view template if it does not already exist.
