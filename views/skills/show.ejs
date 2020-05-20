@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= skill.name %></title>
+    <title><%= skill.skill %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
@@ -15,7 +15,7 @@
 
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" href=""><%= skill.name %></a>
+            <a class="nav-link active" href=""><%= skill.skill %></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/">HOME</a>
@@ -28,7 +28,7 @@
 
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title"><%= skill.name%></h5>
+          <h5 class="card-title"><%= skill.skill%></h5>
           <h6 class="card-subtitle mb-2 text-muted">Learned at: <%= skill.learnedAt%></h6>
           <p class="card-text"><%= skill.furtherInfo%></p>
         </div>

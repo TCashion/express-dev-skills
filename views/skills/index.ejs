@@ -13,17 +13,22 @@
         <li class="nav-item">
             <a class="nav-link" href="/">HOME</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="skills/new">ADD NEW SKILL</a>
+        </li>
     </ul>
 
     <ul class="list-group list-group-flush">
         <% skills.forEach(function(skill) { %>
             <li class="list-group-item">
-                <%= skill.name %>
+                <%= skill.skill %>
                 - 
                 <a href='/skills/<%= skill.id %>' >See More</a>
             </li>
         <% }); %>
     </ul>
+
+    
 
 </body>
 </html>

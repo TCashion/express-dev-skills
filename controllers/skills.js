@@ -14,8 +14,20 @@ function show(req, res, next) {
     });
 };
 
+function newSkill (req, res) {
+    res.render('skills/new');
+};
+
+function create (req, res) {
+    // console.log("skill: ", req.params.skill);
+    // console.log("furtherInfo: ", req.params.furtherInfo);
+    console.log("body: ", req.body);
+};
+
 // export index and show as methods on the exports object
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill, 
+    create
 };
