@@ -4,18 +4,23 @@ const Skill = require('../models/skill');
 // set up index and show
 function index(req, res, next) {
     res.render('skills/index', {
-        skills: Skill.getAll()
+        skills: Skill.getAll(), 
+        title: "Skills List"
     });
 };
 
 function show(req, res, next) {
+    const skill = Skill.getOne(req.params.id);
     res.render('skills/show', {
-        skill: Skill.getOne(req.params.id)
+        skill, 
+        title: skill.skill, 
     });
 };
 
 function newSkill (req, res) {
-    res.render('skills/new');
+    res.render('skills/new', {
+        title: "New Skill"
+    });
 };
 
 function create (req, res) {
@@ -29,8 +34,10 @@ function deleteSkill(req, res) {
 };
 
 function edit(req, res) {
+    const skill = Skill.getOne(req.params.id);
     res.render('skills/edit', {
-        skill: Skill.getOne(req.params.id)
+        skill, 
+        title: `Edit ${skill.skill}`
     });
 };
 

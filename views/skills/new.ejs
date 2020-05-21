@@ -1,6 +1,4 @@
-<%- include('../partials/html-heading.ejs')%>
-
-<body>
+<%- include('../partials/header.ejs', {title})%>
 
     <form action="/skills" method="POST" autocomplete="off">
         <div class="form-group">
@@ -18,5 +16,4 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-</body>
-</html>
+<%- include('../partials/footer.ejs')%>
